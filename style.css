@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s, padding 0.3s;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-item {
+    margin: 0 15px;
+    position: relative;
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.menu-item a:hover {
+    color: #ff6347;
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+.menu-item a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff6347;
+    transition: width 0.3s;
+}
+
+.menu-item a:hover::after {
+    width: 100%;
+}
+
+.section {
+    height: 100vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-section {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.about-section {
+    background: linear-gradient(to right, #f1c40f, #f39c12);
+}
+
+.services-section {
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+}
+
+.contact-section {
+    background: linear-gradient(to right, #fc4a1a, #f7b733);
+}
+
+.active {
+    font-weight: bold;
+    color: #ff6347 !important;
+}
